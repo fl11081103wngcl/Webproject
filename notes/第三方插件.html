@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>第三方插件安装方法</title>
+	<script src="test.js"></script>
+</head>
+<body>
+
+<div>
+第一步：安装插件的包管理器，package control 安装上<br/>
+		1.ctrl+~ ，打开命令执行窗口<br/>
+		2.然后把安装包管理器的代码黏贴到命令执行窗口<br/>
+		3.重启Sublime<br/>
+</div>
+命令代码：sublime3安装命令行：
+import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
+<div>
+第二步：第三方插件安装
+		1.ctrl+shit+p 打开命令面板<br/>
+		2.然后输入install 回车<br/>
+		3.输入包的关键字进行搜索，回车安装<br/>
+
+</div>
+<div>
+	快捷键<br/>
+
+<h5></h5>
+</div>
+</body>
+</html>

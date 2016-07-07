@@ -1,0 +1,573 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+table{
+	border:#00C 1px solid;
+	width:70%}
+table th,table td{
+	border:#F00 1px solid;}
+table th{
+	background-color:#FF0}
+.one{
+	background-color:#0FF;}
+.two{
+	background-color:#0C6;}
+.over{
+	background-color:#909;}
+	
+form table{
+	border:#9F0 1px solid;
+	width:600px;
+	border-collapse:collapse;}
+form table td,form table th{
+	border:#9F0 1px solid;
+	padding:10px;}
+form table th{
+	background-color:#F06;}
+form table td{
+	background-color:#0FF;}
+#repwd{
+	margin-left:115px;}
+.errorInfo{
+	color:#F00;
+	display:none}
+.focus{
+	border:#0F0 3px solid; }
+.normal{
+	border:#000 1px solid;}
+.error{
+	border:#F00 2px solid;}
+	
+</style>
+
+
+
+</head>
+
+<script type="text/javascript">
+function selectCity()
+{
+	var arr = [["---选择省市---"],
+				["海淀区","朝阳区","东城区","西城区"],
+				["沈阳","大连","鞍山","抚顺"],
+				["日照","青岛","济南","烟台"],
+				["洛阳","郑州","开封","南阳"],
+				["南京","江苏","盐城","苏州"]];
+	
+	var index = document.getElementById("selid").selectedIndex;//获取select 中options中数据的角标
+	
+	//alert(document.getElementById("selid").options[index].innerText);//获取指定角标中的元素的值
+	
+	//alert(index);
+	
+	var citys = arr[index];
+	var subCity = document.getElementById("subselid");
+	
+	subCity.options.length=0;
+	/*
+	for(var x=0;x<subCity.options.length;)//subCity.options.length 在删除城市的时候，会递减变化，所有后面的x++ 不需要
+	{
+		
+		alert(x+"..."+subCity.options[x].innerHTML+"..."+subCity.length);
+		subCity.removeChild(subCity.options[x]);
+		}
+*/
+	for(var x=0;x<citys.length;x++)
+	{
+		//alert(citys[x]);
+		var optNode = document.createElement("option");
+		optNode.innerHTML =citys[x];
+		subCity.appendChild(optNode);
+			
+	}
+	
+	
+	
+	}
+
+//行颜色间隔显示，并高亮	
+function trColor()
+{
+	var tabNode = document.getElementsByTagName("table")[1];//获取表格标签
+	
+	var trs = tabNode.rows;//获取表格中所有的行
+	
+	var name;
+	for(var x=1;x<trs.length-1;x++)
+	{
+		if(x%2==1)
+			trs[x].className = "one";
+		else
+			trs[x].className = "two";
+		trs[x].onmouseover = function()
+		{
+			name = this.className;
+			this.className = "over";
+			};
+		trs[x].onmouseout = function()
+		{
+			this.className = name;
+			}
+	}
+}	
+
+//window.onload = trColor;
+
+
+function checkAll(index)
+{
+	var allCheck = document.getElementsByName("all")[index];
+	
+	var subChecks = document.getElementsByName("mail");
+	
+	for(var x=0;x<subChecks.length;x++)
+	{
+		subChecks[x].checked = allCheck.checked;
+		}
+	
+	}
+	
+
+//完成按钮的选取
+
+function checkButton(num)
+{
+	
+	
+	var subChecks = document.getElementsByName("mail");
+	
+	for(var x=0;x<subChecks.length;x++)
+	{
+		if(num>1)
+			subChecks[x].checked = !subChecks[x].checked; 
+		else
+			subChecks[x].checked = num;
+		
+		}
+	
+	}
+
+//删除邮件
+
+function delMails()
+{
+	if(!window.confirm("确定要删除所选择的邮件？"))
+		return;
+	var mails = document.getElementsByName("mail");
+	
+	var arr = new Array();
+	var pos =0;
+	
+	for(var x=0;x<mails.length;x++)
+	{
+		if(mails[x].checked)
+		{
+			var trNode = mails[x].parentNode.parentNode;
+			arr[pos++] = trNode;
+			}
+		
+	}
+	
+	for(var x=0;x<arr.length;x++)
+	{
+		var trNode = arr[x];
+		trNode.parentNode.removeChild(trNode);
+		}
+	
+	trColor();
+}
+
+
+
+
+
+
+function checkPsw(pswNode)
+{
+	var pswNode = pswNode.value;
+	var pswReg = new RegExp("^[0-9]{6}$");
+	var spanNode = document.getElementById("pswspan");
+	if(pswNode.match(pswReg))
+		spanNode.innerHTML="密码正确".fontcolor("green");
+	else
+		spanNode.innerHTML="密码错误".fontcolor("red");
+}
+
+
+
+function checkPswCfm()
+{
+	var repswNode = document.getElementById("confirmpsw");
+	var pswNode = document.getElementById("password");
+	//alert(pswNode.value);
+	var span = document.getElementById("cfmpswspan");
+	
+	if(repswNode.value==pswNode.value)
+		span.innerHTML = "确认密码正确".fontcolor("green");
+	else
+		span.innerHTML = "确认密码与输入密码不一致".fontcolor("red");
+	
+}
+
+function checkMail(mailNode)
+{
+	var mail = mailNode.value;
+	
+	var mailReg = /^\w+@\w+(\.\w+)+$/;
+	
+	var span = document.getElementById("mailspan");
+	
+	if(mailReg.test(mail))
+		span.innerHTML = "邮箱正确".fontcolor("green");
+	else
+		span.innerHTML = "邮箱错误".fontcolor("red");
+	
+	}
+
+
+/*
+function checkForm()
+{
+	var forms = document.forms[0];
+	
+	//alert(forms.user.value);
+	
+	if(checkUser(forms.user))
+	
+	return false;
+	
+}
+
+*/
+
+
+function inputColor(input)
+{
+	input.className = "normal";
+	input.onfocus = function()
+	{
+		this.className = "focus";
+		}
+}
+
+window.onload = function()
+{
+		with(document.forms[0])
+		{
+			inputColor(user);
+			inputColor(psw);
+			inputColor(repsw);
+			inputColor(mail);
+		}
+		
+		
+		
+		trColor();
+		
+	}
+	
+//校验方法
+
+function check(inputNode,regex,divId)
+{
+	var b = false;
+	var divNode = document.getElementById(divId);
+	//alert(divNode.nodeName);
+	
+	if(regex.test(inputNode.value))
+	{
+		inputNode.className = "normal";
+		divNode.style.display = "none";
+		b = true;
+		}
+	else
+	{
+		inputNode.className = "error";
+		divNode.style.display = "block";
+		}
+	return b;
+	
+	}
+
+//校验用户名
+function checkUser(userNode)
+{
+		//var userName = userNode.value;
+		var nameReg = new RegExp("^\\w{3,5}$");//[a-z]{5}:这个是匹配满足条件的连续5个字母，例如11abcdf23，这样也是正确的，但是与我们预计的不符合，怎么办？我们可以使用 ^ 封装头，$ 封装尾部.即^[a-z]{5}$，确定头到尾之间是5个；
+		
+		return check(userNode,nameReg,"userid");
+		
+		/*
+		var spanNode = document.getElementById("userspan");
+		if(userName.match(nameReg))
+			spanNode.innerHTML="用户名正确".fontcolor("green");
+		else
+			spanNode.innerHTML="用户名错误".fontcolor("red");
+		
+		
+		var divNode = document.getElementById("userid");
+		if(nameReg.test(userName))
+		{
+			userNode.className = "normal";
+			divNode.style.display ="none";
+		}
+		else
+		{
+			userNode.className = "error";
+			divNode.style.display ="block";
+			
+			}
+		*/
+		
+	}
+
+
+//校验密码
+function checkPsw(pswNode)
+{
+	var pswReg = /^\w{3,5}$/i;
+	
+	return check(pswNode,pswReg,"pswdiv");
+}
+
+//校验确认密码
+function checkRepsw(repswNode)
+{
+	var b = false;
+	var value1 = repswNode.value;
+	var value2 = document.getElementsByName("psw")[0].value;
+	var divNode = document.getElementById("repswdiv");
+	if(value1==value2)
+	{
+		repswNode.className = "normal";
+		divNode.style.display ="none";
+		b = true;
+		
+		}
+	else
+	{
+		repswNode.className = "error";
+		divNode.style.display ="block";
+		}
+	return b;
+	
+	}
+//校验邮箱
+
+function checkMail(mailNode)
+{
+	var mailReg = /^\w+@\w+(\.\w+)+$/;
+	 return check(mailNode,mailReg,"maildiv");
+	
+	}
+
+
+function checkForm(formNode)
+{
+	with(formNode)
+	{
+		if(checkUser(user) && checkPsw(psw) && checkRepsw(repsw) && checkMail(mail))
+			event.returnValue = true;
+		else
+			event.returnValue = false;
+		}
+	
+	}
+
+
+
+
+</script>
+
+
+
+
+
+
+<body>
+<!--
+1.定义界面
+		通过表格格式化表单
+        表格每一行都有自己的背景颜色
+        将单元格中的数据通过div进行封装，以便操作
+2.定义样式。
+		表格的样式
+        div的样式
+3.动态效果
+	3.1 在页面加载时，将所有的输入框定义获取焦点时的框线颜色以及定义焦点时的框线颜色；
+    3.2 进行内容的校验。可以通过正则表达式完成
+    	通过刚才对用户名的分析，发现代码的重复度很高，为了提高复用性，将不同的内容
+        作为参数传递，将相同的参数进行函数的封装
+    
+		
+-->>
+
+
+
+
+ <!-- 1.失去焦点事件，开始校验输入的用户名是否正确,即输入完用户名之后，焦点移开就校验
+ 	2.span 区域通常用来定义用户区域的数据的
+  -->
+  
+  
+  
+ <form onsubmit="checkForm(this)">
+ 	<table>
+    	<tr>
+        	<th>用户注册</th>
+        </tr>
+        <tr>
+        	<td>
+             	<div>用户名：</div>
+            	<div><input type="text" name="user"  onblur="checkUser(this)"/></div>
+                <div class="errorInfo" id="userid">用户名错误，请按要求输入</div>
+               	<div>用户名必须3-5位，由字母（a-z），数字（0-9），下划线（—）组成。</div>
+            </td>
+        </tr>
+        <tr>
+        	<td>
+            	<div><span>密码：</span><span id="repwd">确认密码:</span></div>
+            	<div>
+                	<input type="password" name="psw" onblur="checkPsw(this)" />
+                	<input type="password" name="repsw" onblur="checkRepsw(this)" />
+                </div>
+                <div class="errorInfo" id="pswdiv">密码格式错误，请规范输入</div>
+                <div class="errorInfo" id="repswdiv">两次密码输入不一致</div>
+               	<div>密码必须3-5位，由字母（a-z），数字（0-9）组成。</div>
+            </td>
+        </tr>
+        <tr>
+        	<td>
+            	<div>邮箱地址:</div>
+                <div><input type="text" name="mail" onblur="checkMail(this)" /></div>
+                <div class="errorInfo" id="maildiv">邮箱地址错误，请安要求填写</div>
+            </td>
+        </tr>
+        <tr>
+        	<th><input type="submit" value="提交数据" />
+            </th>
+        </tr>
+
+	</table>
+ 
+ </form>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ <!-- 
+  
+<form action="http://127.0.0.1" onsubmit="checkForm()">
+用户名称：<input id="userid" type="text" name="user" onblur="checkUser(this)" /> 
+<span id="userspan"></span> 
+<br/>
+输入密码：<input id="password" type="text" name="psw" onblur="checkPsw(this)"  /> 
+<span id="pswspan"></span>
+<br/>
+确认密码：<input id="confirmpsw" type="text" name="repsw" onblur="checkPswCfm()" />
+<span id="cfmpswspan"></span>
+<br/>
+邮箱地址：<input type="text" name="mail" onblur="checkMail(this)" /> 
+<span id="mailspan"></span>
+<br/>
+<input type="submit" name="提交数据"  /> <br/>
+</form>
+
+-->
+
+<table>
+	<tr>
+    	<th><input type="checkbox" name="all" onclick="checkAll(0)"/> 全选 </th>
+        <th>收件人</th>
+        <th>邮件名字</th>
+    </tr>
+    <tr>
+    	<td><input type="checkbox" name="mail"/></td>
+        <td>战狼01</td>
+        <td>新邮件</td>
+    </tr>
+        <tr>
+    	<td><input type="checkbox" name="mail"/></td>
+        <td>战狼02</td>
+        <td>新邮件</td>
+    </tr>
+        <tr>
+    	<td><input type="checkbox" name="mail"/></td>
+        <td>战狼03</td>
+        <td>新邮件</td>
+    </tr>
+        <tr>
+    	<td><input type="checkbox" name="mail"/></td>
+        <td>战狼04</td>
+        <td>新邮件</td>
+    </tr>
+        <tr>
+    	<td><input type="checkbox" name="mail"/></td>
+        <td>战狼05</td>
+        <td>新邮件</td>
+    </tr>
+        <tr>
+    	<td><input type="checkbox" name="mail"/></td>
+        <td>战狼06</td>
+        <td>新邮件</td>
+    </tr>
+        <tr>
+    	<td><input type="checkbox" name="mail"/></td>
+        <td>战狼07</td>
+        <td>新邮件</td>
+    </tr>
+        <tr>
+    	<td><input type="checkbox" name="mail"/></td>
+        <td>战狼08</td>
+        <td>新邮件</td>
+    </tr>
+    
+    <tr>
+    	<th><input type="checkbox" name="all" onclick="checkAll(1)"/> 全选 </th>        
+        <th colspan="2">
+        	<input type="button"  value="全选" onclick="checkButton(1)" />
+            <input type="button"  value="取消全选"  onclick="checkButton(0)"/>
+            <input type="button"  value="反选"  onclick="checkButton(2)"/> 
+            <input type="button"  value="删除所选邮件" onclick="delMails()" />   
+        </th>
+    </tr>
+
+<table>
+
+
+
+<p>
+</p>
+
+
+
+
+
+<select id="selid" onchange="selectCity()">
+	<option>---选择省市---</option>
+    <option>北京</option>
+    <option>辽宁</option>
+    <option>山东</option>
+    <option>河南</option>
+    <option>江苏</option>
+    
+
+</select>
+
+<select id="subselid">
+	<option>---选择城市---</option>
+</select>
+
+
+
+</body>
+</html>

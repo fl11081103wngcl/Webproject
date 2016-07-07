@@ -1,0 +1,7 @@
+1.显示咱们的左侧栏：
+View -> Side Bar -> Hide Side Bar/Show Side bar
+
+2.快速打开 文件夹资源管理器 ： win+e
+
+3.在sublime 创建一个新的html页面
+	在文件夹上面 -> 右击 New File
