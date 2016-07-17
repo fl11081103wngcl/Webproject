@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>12_表格标签演示</title>
+</head>
+<body>
+<!-- 
+table：整个表格
+tr：代表一行
+td：代表一个单元格
+thead：表头，例如 姓名，班级，成绩 等；
+th：表头中的单元格
+tbody：表格身体
+ -->
+<table border="1">
+	<thead>
+		<tr>
+			<th>列名1</th>
+			<th>列名2</th>
+			<th>列名3</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>基本参数</td>
+			<td> 参考价格</td>
+			<td>基本功能</td>
+		</tr>
+		<tr>
+			<td>1.4t</td>
+			<td> 20万</td>
+			<td>定位</td>
+		</tr>
+
+	</tbody>
+	
+
+
+</table>
+
+<table border="1">
+	<thead>
+		<tr>
+			<th>学科</th>
+			<th>姓名</th>
+			<th>班级</th>
+			<th>成绩</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<!-- rowspan：行单元格合并，rowspan="2" 代表 单元格占用2行 -->
+			<td rowspan="2">语文</td>
+			<td>blackbrin</td>
+			<!-- <td>一年2班</td> -->
+			<!-- colspan：列 单元格合并，colspan="2" 代表 单元格占用2列-->
+			<td colspan="2">200分</td>
+		</tr>
+		<tr>
+			<!-- <td>语文</td> -->
+			<td>felix</td>
+			<td>一年1班</td>
+			<td>300分</td>
+		</tr>
+	</tbody>
+
+</table>
+	
+</body>
+</html>

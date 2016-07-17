@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>14_表单演示</title>
+</head>
+<body>
+<!-- 所有的表单标签必须被包裹在 form 标签中，其中的属性action 指的是提交后台的地址，暂时可以使用 # 代替 -->
+
+<form action="#">
+	<!-- type：指文本框的类型，value：指文本框中的值 -->
+	用户名：<input type="text" value="felix"> <br>
+	密码：<input type="password"> <br>
+	
+	<!-- 单选框 -->
+	<!-- name 值相同的时候，input 就是一组 -->
+	性别：男<input type="radio" checked name="gender"></input> 女<input type="radio" name="gender"></input><br>
+	
+	<!-- 复选框 -->
+	爱好：<input type="checkbox">电影 
+			<input type="checkbox">音乐
+			<input type="checkbox">跑步
+
+	<!-- 下拉列表 -->
+	<select name="" id="">
+		<option value="1">农历</option>
+		<option value="2" selected="true">公历</option>
+	</select>
+	<br>
+	
+	<!-- multiple：代表生成一个展开的下拉列表 -->
+	<select name="" id="" multiple>
+		<option value="1">公历</option>
+		<option value="1">农历</option>
+		<option value="1">公历</option>
+		<option value="1">公历</option>
+	</select>
+
+	<!-- 文本域 -->
+	<textarea name="" id="" cols="30" rows="10"></textarea>
+
+	
+
+</form>
+	
+</body>
+</html>
