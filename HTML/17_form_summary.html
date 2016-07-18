@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>17_表单总结</title>
+</head>
+<body>
+<h3>表单总结</h3>
+<p>form：包裹标签,action:#</p>
+<p>input:文本框text、单选按钮radio，多选按钮checkbox，提交按钮submit，按钮button，重置按钮</p>
+<p>&lt;input type="text"&gt;</p>
+<p>Type:radio 单选</p>
+<p>&lt;input type="submit" value="提交"&gt;</p>
+<p>&lt;input type="button" value="普通的按钮"&gt;</p>
+<p>&lt;input type="reset" value = "重置&gt;"</p>
+<p>checked属性：标识单选或者多选按钮是否被选中，单属性</p>
+<p>
+Label标签，for 属性指向要提供服务的标签的id值<br>
+Label直接包裹标签，可以实现点击标签的文字内容，让包裹的表单标签，标签获得焦点。
+</p>
+<p>Select：下拉列表，列表。Multiple，单属性</p>
+<p>option：设置我们的列表的选项</p>
+<p>
+Textarea：文本域标签，当输入大量的文本的时候需要使用文本域标签<br>
+cols：设置文本域可以输入多少列字符，宽度<br>
+Rows：设置文本域的可以输入的行，字符数，高度<br>
+</p>
+<p>
+Fildset标签
+<br>
+Legend，组合标签的标题。</p>
+<p></p>
+
+<form action="#">
+	<input type="text" id="textid" value="0000">
+	<input type="radio" name="gender"> 单选按钮
+	<input type="checkbox"> 多选按钮
+	<label ><input type="button" value="普通按钮">选中按钮</label>
+	<input type="submit" name="" id="" value="提交表单">
+	<input type="reset" value="重置">
+
+	<label for="textid">获取文本焦点</label>
+
+
+
+</form>
+</body>
+</html>
