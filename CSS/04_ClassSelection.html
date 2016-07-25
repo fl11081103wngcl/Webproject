@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_类选择器</title>
+	<style>
+	
+	/*
+	类选择器就是选取页面中所有标签的class属性值相同的一类标签。
+	类选择器的符号是： .  (点)
+	*/
+
+
+	.web{
+		color: green;
+	}
+	
+	.demo
+	{
+		background-color: #ff0;
+	}
+
+/*
+1. ID选择器和class选择器的区别
+2、 相同的Class属性值，可以在HTML中出现多次。ID属性值在页面中只能出现一次。
+3、 一个class的属性可以有多个值，也就是说一个标签可以有多个类。
+ 
+建议大家尽量使用类选择器。使用ID时候情况：当确实能唯一确定当前页面中标签只会出现一次，这时候可以使用ID选择器。
+如果不能保证相同的作用的标签在页面中只出现一次，那么这时候就选择使用类选择器。
+
+
+*/
+	</style>
+</head>
+<body>
+<h1>传智播客</h1>
+<p>传智播客-前端与移动开发</p>
+<p class="web demo">传智博客-java学院</p>
+<p>传智播客-Android学院</p>
+<p>传智播客-c++学院</p>
+<p>传智播客-UI学院</p>
+<div class="web">
+	教学质量全国第一
+</div>
+<ul>
+	<li class="web">北京校区</li>
+	<li class="web">上海校区</li>
+	<li>广州校区</li>
+	<li>武汉校区</li>
+	<li>深圳校区</li>
+	<li>南京校区</li>
+</ul>
+	
+</body>
+</html>

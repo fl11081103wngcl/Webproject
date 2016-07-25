@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07_后代选择器案例</title>
+	<style>
+/*	.city
+	{
+		color: red;
+	}*/
+
+	/*
+	后代选择器：
+	首先找到所有的.box 类对应的标签，然后找到标签的所有后代li标签
+	
+	处理方式：先找到所有的li 标签，然后在找到.box 类进行过滤
+	*/
+	.box li{
+		color: green;
+	}
+
+	</style>
+</head>
+<body>
+<div class="box">
+	<ul>
+		<li class="city">北京</li>
+		<li class="city">上海</li>
+		<li class="city">深圳</li>
+	</ul>
+</div>
+<div>
+	<ul>
+		<li>南京</li>
+		<li>杭州</li>
+		<li>武汉</li>
+	</ul>
+</div>
+</body>
+	
+</html>
