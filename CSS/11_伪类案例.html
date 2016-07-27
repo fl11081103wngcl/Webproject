@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11_伪类案例</title>
+	<style>
+		/* 以下伪类写法的顺序，都是link、visited、hover、active 都是这样写，为什么这么写？是因为CSS有个层叠的特性；
+			如果不按照这个顺执行的话，他的动作效果就会出现混乱
+
+			伪类选择器：主要控制标签效果状态（例如：鼠标移动在文本上显示“手”，移开就不显示）
+
+		 */
+		/* :link
+ 			伪类将应用于未被访问过的链接。IE6不兼容，解决此问题，直接使用a标签。 */
+		a:link{color:red;}
+		/* :visited
+			伪类将应用于已经被访问过的链接
+		 */
+		 a:visited{color:orange;}
+
+		 /* :hover,较常用
+			伪类将应用于有鼠标指针悬停于其上的元素。在IE6只能应用于a连接，IE7+所有元素都兼容。
+ 		*/
+			a:hover {
+						background-color: silver;
+						color:pink;
+			}
+		/* :active
+			伪类将应用于被激活的元素，如被点击的链接、被按下的按钮等。 */
+
+			a:active {
+						color:blue;
+					}
+
+		/* 有个原则：LoVe HAte 原则
+			Lo --->link
+			Ve --->visited
+			H --->hover
+			Ate --->active
+		 */
+
+		 .textName:focus{
+		 	background-color: green;
+		 }
+
+		 a:focus{
+		 	font-size:20px;
+		 }
+
+	</style>
+
+</head>
+<body>
+	<a href="#" target="_blank">当前网站</a>
+	<a href="http://www.itcast.cn" target="_blank">传智播客官网</a>
+	<a href="http://web.itcast.cn" target="_blank">前端学院的官网</a>
+	<a href="http://www.baidu.com" target="_blank">百度官网</a>
+	<a href="http://vms.fondcoo.com/" target="_blank">方果VMS</a>
+	<a href="http://acm.ottclub.com" target="_blank">管理控制平台</a>
+	<input type="text" class="textName">
+</body>
+</html>

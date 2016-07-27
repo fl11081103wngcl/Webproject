@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>13_伪元素before和after的使用</title>
+
+	<style>
+
+		/* 1.只有before和after 伪元素，才能使用content 属性
+		   2.逗号，：代表并集
+		   3.:before与:after伪元素，可以设置元素之前后之后的 内容，并且配合content设置相关内容。比如：   #demo:after,#demo:before {  content:"--";display:block; }
+		   4.before和after：默认是行元素，显示在一行，如果想变成块级可以使用属性display
+ 		*/
+		.wrap:before,.wrap:after {
+			content:"------";
+			display:block;
+		}
+
+	</style>
+</head>
+<body>
+	<div>
+		<hr>
+	</div>
+	<div class="wrap">
+		《口袋妖怪：GO》让粉丝们的目光再次投向了那些千奇百怪的小精灵。《口袋妖怪》目前一共有721种精灵，它们的稀有程度也有相应的划分。那么哪一只才是最有人气的神兽呢？
+	</div>
+	<div>
+		<hr>
+	</div>
+	
+</body>
+</html>

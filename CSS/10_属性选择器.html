@@ -3,8 +3,29 @@
 <head>
 	<meta charset="UTF-8">
 	<title>10_属性选择器</title>
+	<style>
+
+	/*  属性选择器就是根据html标签的属性进行过滤选择。
+		常见的几种方式：
+ 		h1[id] { color: red; }
+	    设置包含id属性的h1标签的字体为红色。
+ 
+	把拥有id和class属性的h1标题选出来然后设置字体大小为17px
+	h1[id][class] { font-size: 17px; }
+ */
+
+		h1[id]{color:red;}
+		h1[id][class]{color:green;}
+		input[type="text"]{background-color:purple;}
+		input[type="password"]{background-color:orange;}
+	</style>
 </head>
 <body>
-	
+	<h1>中国足球出现了吗？</h1>
+	<h1 id="aside-title">中国篮球哈哈</h1>
+	<h1 id="aside" class="attrite">你好</h1>
+	<input type="text">
+	<input type="password">
+
 </body>
 </html>
