@@ -6,23 +6,59 @@
 	<style>
 	/* 结论一：继承的样式要大于默认的样式 */
 		body {
-			color:red;
+			color:red;   /*继承样式 > 默认样式 */
 		}
 	/* 结论2： 通配符选择器的样式的优先级比继承样式的优先级要高。 */
+	
 	* {
-		color:blue;
+		color:blue;    /*通配符 > 继承样式 */
 	}
 
 	/* 结论三：标签的选择器的优先级要高于通配符选择器的优先级。 */
 
+	h1 {
+		color:orange;  /*标签样式 > 通配符样式 */
+	}
+
+	/*结论四：类选择器的样式的优先级要高于 标签选择器的样式的优先级。*/
+
+	.text-demo {
+		color: yellow; /*类选择器 > 标签样式 */
+	}
 	
+	/*结论五：id选择器的优先级高于 类选择器的优先级 */
+	
+	#id-title {
+		color: purple; /*id选择器 > 类选择器 */
+	}
+
+	/*复合选择器*/
+
+	.aside .aside-dt h1{
+		background-color: silver;
+	}
+
+	.aside #id-title {
+		background-color: yellow;
+	}
+
+	/*复合选择器的样式优先级核算：
+	复合选择器 的优先级根据四个层次来算，首先是行内最高。
+	其次，比较所有的id选择器的个数，个数多的为高。
+	再次比较类选择器的个数，个数多的为高，
+	最后比较标签选择器的个数，个数多的为高。
+	*/
+	
+	/* 行内 > id选择器 > 类选择器 > 标签选择器 > 通配符 > 继承 > 默认 */
+
 	</style>
 </head>
 <body>
 	<div class="wrap">
 		<div class="aside">
 			<div class="aside-dt" id="title-txt">
-				<h1>我是第一个标题</h1>
+				<!-- 结论六： 行内样式的选择器的优先级高于  id选择器的优先级。 -->
+				<h1 class="text-demo" id="id-title" style="color: #AFCA00;">我是第一个标题</h1> <!-- 行内样式 > id选择器 -->
 			</div>
 			<div class="aside-dd">
 				<p>我是一个段落</p>
