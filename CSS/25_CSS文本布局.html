@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>25_CSS文本布局</title>
+	<style>
+		.letter-spaceingdemo {
+			/* 可以控制字符间距，中文一个汉字就代表一个字符，英文一个字母代表一个字符 */
+			letter-spacing:10px;
+		}
+		.word-spaceingdemo {
+			/* 下面的设置只对英文单词有影响，对中文字与字之间的距离没有影响 
+				如果中文字与字之间有空格，会把空格设置成20px
+			*/
+			word-spacing:20px;
+		}
+	</style>
+</head>
+<body>
+	
+	<p class="letter-spaceingdemo">
+		
+		在国内的层面来说，区别很大，说说我的经历吧。我中学上的是我那个省最好的一个中学，升学率极高，学业压力也不重，高中的时候就有各种社团活动，是我记忆中最快乐的三年(虽然我的成绩一直越来越烂）。话说我高中，相对我那个省来说，富二代真是多啊！现在的高中同学，大概一半在国外吧，另一半里面，1/4国内读研，1/4在金融机构工作。我的亲戚也不少富二代，情况大抵类似，国外名校毕业——然后去银行工作，世界各地旅行。话说今天发现知乎上火红一个大美女，原来也是我中学那一届的。
+
+	</p>
+
+	<p class="word-spaceingdemo">
+		I am a teacher!
+	</p>
+
+</body>
+</html>

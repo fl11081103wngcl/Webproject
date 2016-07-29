@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>18_display属性使用</title>
+	<style>
+	/* 
+	display可以控制标签的显示模式。
+	display：none | inline | block | inline-block
+	 继承性：无
+	display值的解释：
+	none ：此元素不被显示，在文档中被移除。
+	block ：此元素按块级元素显示：前后带换行符，自己占一行。内联元素 → 块元素
+	inline ：此元素按内联元素显示：1个挨着1个。块元素 → 内联元素
+	inline-block：按行内标签进行排版，但是可以设置宽高，而且高度可以影响行高（以后再详细讲）。
+	 */
+	
+		/* 案例1： display改变标签的模式，行内转块级，块级转行内。*/
+		div {
+				background-color: silver;
+				display:inline;  /* 可以让元素变成内行模式的标签 */
+		}
+
+		strong {
+			background-color: yellow;
+			/* display:block 可以让元素变成块级模式的标签 */
+		}
+
+
+		/* 案例2：通过CSS隐藏HTML标签 
+		通过设置Display为none，那么可以让这整个标签在页面中移除掉。
+		对比一下：
+		display: none; 直接把当前标签从页面中直接移除了，不影响页面的布局    
+		visibility: hidden;  这个只是不显示，但还是占用页面的空间
+		*/
+
+		s {
+			background-color: purple;
+			/* display:block; */
+			/* display:none; */
+			visibility:hidden;
+		}
+
+		
+/* 案例3：行内块元素设置
+			  宽高    边距            独占行
+行内元素：    X        左右边距      不独占
+块级元素：    √       上下左右       独占
+行内块元素：  √        左右          不独占
+ 
+行内元素不能设置宽高，只能通过他的内容来撑开他的宽度和高度。如果你设置了宽高是不会影响行内元素的显示的。
+ */
+
+		.demo-inline {
+			display:inline-block; /* inline-block：按行内标签进行排版，但是可以设置宽高，而且高度可以影响行高 */
+			height:200px;
+
+		}
+
+		span {
+			/* 行内元素不能设置宽高，只能通过他的内容来撑开他的宽度和高度。如果你设置了宽高是不会影响行内元素的显示的
+			   如果一定要设置，行内元素的宽高，则可以是使用display属性，设置为 行内块（inline-block）；
+			 */
+			height:200px;  
+			background-color: green;
+			display:inline-block;
+		}
+
+	</style>
+</head>
+<body>
+<!-- 行内元素：可以与其他的元素公用一行 -->
+	
+	<span>我是span</span>
+	<strong>我是strong标签</strong>
+	<s>我是一个s标签</s>
+<!-- 块级标签：独占一行 -->
+<div>
+	我是div标签
+</div>
+
+<div class="demo-inline">
+	我是一个行内块标签
+</div>
+</body>
+</html>
