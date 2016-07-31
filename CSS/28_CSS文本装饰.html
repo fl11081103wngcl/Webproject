@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>28_CSS文本装饰</title>
+	<style>
+	/*
+		text-decoration：文本装饰
+		text-decoration 属性用于设置文本的下划线、上划线、删除线等装饰效果
+		其可用属性值如下：
+		--none：没有装饰（正常文本默认值）
+		--underline：下划线
+		--overline：上划线
+		--line-throgh：删除线
+
+		注：text-decoration 后面可以赋多个值，用于给文本添加多种显示效果，例如希望文本同时有下划线和删除线，就可以将underline和line-through同时赋值给text-decoration
+
+
+	*/
+		* {
+			font:20px/40px "微软雅黑";
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+
+	.txt-underline {
+		text-decoration: underline;
+		display:block;
+		}
+	.txt-overline {
+		text-decoration: overline;
+		display:block;
+	}
+	.txt-through {
+		text-decoration: line-through;
+		display:block;
+	}
+	.combination {
+		text-decoration: overline underline;
+		display:block;
+	}
+	</style>
+</head>
+<body>
+	<div>
+		<a href="#">一般听雨一般秋。不信今年人比去年愁。</a>
+		<span class="txt-underline">
+			欲挽游丝萦好梦，一枝啼血洒春空。
+		</span>
+		<span class="txt-overline">一卷离骚一卷经。十年心事十年灯。芭蕉叶上几秋声。</span>
+		<span class="txt-through">辗转罗衾梦未成，今夜三更，昨夜三更。残春不耐雨声声，春也无情，雨也无情。</span>
+		<span class="combination">
+			
+			若教眼底无离恨，不信人间有白头
+		</span>
+	</div>
+	
+</body>
+</html>

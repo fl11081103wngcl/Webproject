@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>31_CSS关于自动换行的处理</title>
+	<style>
+	/*word-break:自动换行
+	normal：使用浏览器默认的换行规则，不打断单词显示
+
+	break-all：允许在单词内换行
+
+	keep-all：只能在半角空格或连字符处换行
+
+	*/
+		div {
+			border: 1px solid red;
+			background-color: blue;
+			width: 100px;
+			height: 100px;
+
+			/*word-break: break-all; *//*可以把一个单词放到两行中，充分利用行的空间*/
+			word-break: keep-all;
+
+		}
+	</style>
+</head>
+<body>
+<div>
+	<!-- 一叶舟轻，双桨鸿惊。水天清、影湛波平。鱼翻藻鉴，鹭点烟汀。过沙溪急，霜溪冷，月溪明。 -->
+
+	I am  a tecaher tecaher tecaher
+</div>
+	
+</body>
+</html>

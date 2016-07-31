@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>30_CSS文本空白字符处理</title>
+	<style>
+	/*
+
+	Normal：正常的显示，如果宽度不够进行折行显示。
+	Nowrap：即使超过盒子的宽度，文本也不进行换行显示。
+	Pre：写html代码的时候是什么样式的，显示就显示成什么样的。
+*/
+	div {
+		background-color: green;
+		height: 200px;
+		width: 300px;
+		border: 1px solid red;
+	}
+	.nowrap {
+		white-space: nowrap;
+	}
+	.pre {
+		white-space: pre;
+	}
+	</style>
+</head>
+<body>
+<div class="normal">
+normal:曲阑干外天如水，昨夜还曾倚。初将明月比佳期，长向月圆时候、望人归。
+	
+</div>
+<div class="nowrap">
+nowrap:曲阑干外天如水，昨夜还曾倚。初将明月比佳期，长向月圆时候、望人归。
+</div>
+<div class="pre">
+	pre:曲阑干外天如水，昨夜还曾倚。初将明月比佳期，长向月圆时候、望人归。
+var i = 0;
+i++;
+console.log(i);
+</div>
+
+	
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>27_CSS行高练习</title>
+</head>
+<style>
+	/*
+	line-height:行间距
+	line-height：属性用于设置行间距，就是行与行之间的距离，即字符的垂直间距，一般称之为行高
+	line-height常用的属性值单位有三种，分别是像素px、相对值em和百分比%，实际工作中使用最多的是px
+	;
+	行高的CSS定义：行高是两行文本基线的距离。实际上就是：文本的高度+一倍的行距。
+	一行文本的高度正好是：  0.5倍行距+ 文本的高度 + 0.5倍行距
+	行高可以跟单位，也可以不跟单位，但是意义不一样
+	font：12px/1.5em "宋体" // 当前文本字体大小是12px，行高是1.5倍的em，就是1.5倍的文本大小
+	font:12px/150% "宋体"   
+	font:12px/1.5 "宋体"
+	font:12px/20px "宋体";
+
+	
+
+	*/
+
+	* {
+		padding: 0;
+		margin: 0;
+	}
+
+	p.demo {
+		/*height: 100px;*/
+		line-height: 100px;
+		text-align: center;
+		font-size: 40px;
+		background-color: silver;
+	}
+
+	.wrap {
+		font:30px "黑体";
+		background-color: green;
+
+
+	}
+
+	.wrap p {
+		background-color: red;
+
+		/*font: 35px/1.5em "宋体"; *//*此时行高是52.5px=35x1.5  em 是根据当前字体大小计算*/
+		/*font: 35px/1.5 "宋体";  */
+		/*font: 35px/150% "宋体"; */  /*结果和上面2个都是一样的*/
+
+		font: 35px/40px "宋体";  /*字体是35px，行高是40px*/
+
+	}
+
+
+</style>
+<body>
+<p class="demo">
+	欲凭新句破新愁，笑问落花花不语。
+
+</p>
+
+<div class="wrap">
+	佳音闻东来，暮森映客半
+	
+	<p>
+		压枕离愁飞不去，西风疑负菊花开。起看清秋月满台。
+	</p>
+
+	佳音闻东来，暮森映客半
+</div>
+	
+</body>
+</html>
