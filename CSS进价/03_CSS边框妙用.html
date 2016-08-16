@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_CSS边框妙用</title>
+	<style>
+	img {
+		height: 200px;
+		width: 200px;
+		/* 去掉默认边框，兼容性最好的写法 */
+		border: 0 none;
+	}
+
+	* {
+		padding: 0；
+		margin:0;
+	}
+
+	.box1 {
+
+			width: 0px;
+			height: 0px;
+			border: 50px solid transparent;
+			border-bottom-color: green;
+			border-top: 0 none;
+			margin-left: 100px; 
+			/* background-color: blue; */
+
+	}
+	.box2 {
+
+			width: 0px;
+			height: 0px;
+			border: 100px solid transparent;
+			border-bottom-color: green;
+			border-top: 0 none;
+			margin-left: 50px; 
+			/* background-color: blue; */
+
+	}
+	.box3 {
+
+			width: 0px;
+			height: 0px;
+			border: 150px solid transparent;
+			border-bottom-color: green;
+			border-top: 0 none;
+			/* background-color: blue; */
+
+	}
+	.box4 {
+
+			width: 10px;
+			height: 100px;
+			border: 1px solid green;
+			margin-left: 140px; 
+
+			/* background-color: blue; */
+
+	}
+		
+	</style>
+</head>
+<body>
+
+<img src="D:\Webproject\1.jpg" alt="">
+
+<!-- 用border 属性，绘制一个三角形 -->
+
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4"></div>
+	
+</body>
+</html>
