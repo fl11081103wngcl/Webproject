@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06_行内元素设置外边距和内边距的表现</title>
+	<style>
+		.box {
+			width: 200px;
+			height: 200px;
+			background-color: green;
+		}
+
+		.box strong {
+			margin-top: 100px;
+			margin-bottom: 20px;
+			/* margin-top 和margin-bottom 对行内元素是没有任何效果的
+				行内元素的margin（padding）只能在水平方向起作用。垂直方向不起作用。
+
+			 */
+
+			margin-right: 20px;
+			margin-left: 40px; 
+		}
+	</style>
+</head>
+<body>
+
+<div class="box">
+	<span>传智播客</span>
+	<strong>前端与移动开发学院</strong>
+	<span>传智播客</span>
+	<span>传智播客</span>
+	<span>传智播客</span>
+	<span>传智播客</span>
+	<span>传智播客</span>
+
+
+</div>
+	
+</body>
+</html>
