@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07_CSS设置盒子内容的宽高</title>
+	<style>
+	div {
+
+		background-color: #ccc;
+		/* 这里设置的height和width仅仅是内容的宽度和高度，而不是盒子的宽高 */
+		height: 200px;
+		width: 200px;
+		padding: -100px; /* padding: 负数无效 */
+		border: 50px solid red;
+		margin: 0 auto; /* margin: 负数有效 */
+	}
+		
+	</style>
+</head>
+<body>
+
+<div>
+	整个盒子占用的空间：宽度：左边框宽度+左padding+width+右padding+右边框
+	整个盒子占用的空间：高度：上边框高度+上padding+height+下padding+下边框
+
+</div>
+
+	
+</body>
+</html>

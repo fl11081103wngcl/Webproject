@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>13_CSS溢出处理overflow</title>
+	<style>
+	/* 1. Overflow详解
+	当盒子内的元素超出盒子自身的大小时，内容就会溢出（IE6除外），这时如果想要规范溢出内容的显示方式，就需要使用CSS的overflow属性
+        属性	        描述
+	visible	        内容不会被修剪，会呈现在元素框之外（默认值）
+	hidden	        溢出内容会被修剪，并且被修剪的内容是不可见的
+	auto	        在需要时产生滚动条，即自适应所要显示的内容
+	scroll	        溢出内容会被修剪，且浏览器会始终显示滚动条 */
+		div {
+			background-color: silver;
+			height: 100px;
+			width: 100px;
+			border: 1px solid red;
+			/* overflow: visible; 默认显示  */
+
+			overflow: hidden;
+			overflow: auto;
+			overflow: scroll;
+		}
+	</style>
+</head>
+<body>
+<div>
+	在里约奥运赛场上，我国体育健儿大力弘扬奥林匹克精神和中华体育精神，同世界各国各地区运动员相互学习、相互交流，增进了友谊和了解。你们尊重对手、尊重裁判、尊重观众、尊重规则，表现出精湛的运动技艺和优良的竞赛作风，向世界展现了当代中国的正能量和当代中国人民的精神风貌。你们的优异成绩和奋发表现，激发了全国各族人民和海外华侨华人的爱国热情，振奋了民族精神，凝聚了奋进力量。
+</div>
+	
+</body>
+</html>

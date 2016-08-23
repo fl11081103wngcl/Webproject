@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08_CSS外边距合并案例1</title>
+	<style>
+/* 	第一种外边距合并的情况：
+当两个块级元素，上面块级元素拥有下外边距，
+下面的块级元素拥有上外边距的时候。两个盒子上下的距离会取 两个边距的最大值，
+而不是把两个盒子的边距进行加和处理。 */
+	.box1 {
+		background-color: silver;
+		width: 200px;
+		height: 200px;
+		border: 10px solid red;
+		margin-bottom: 20px;
+	}
+
+	.box2 {
+		background-color: silver;
+		width: 200px;
+		height: 200px;
+		border: 10px solid red;
+		margin-top: 50px;
+		margin-bottom: 200px;
+	}
+	
+	.box3 {
+		background-color: silver;
+		width: 200px;
+		height: 200px;
+		border: 10px solid red;
+		margin-top: -50px;
+
+	}
+
+	</style>
+</head>
+<body>
+
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+
+	
+</body>
+</html>

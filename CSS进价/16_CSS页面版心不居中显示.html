@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>16_CSS页面版心不居中</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		.header, .footer, .nav, .main {
+			background-color: silver;
+			border: 1px solid teal;
+/* 			width: 1190px;
+			margin: 0 auto 10px auto; */
+			margin-bottom: 10px; 
+
+		}
+
+
+
+		.header, .footer {
+			height: 100px;
+		}
+		.nav, .main {
+			height: 300px;
+			float: left;
+		}
+		.nav {
+			width: 200px;
+			margin-right: 10px;
+
+		}
+		.main {
+
+			width: 1689px; /* 1190-202-2 */
+			/* margin-left: 210px; */
+
+		}
+		.footer {
+			clear: both; /* 清除浮动，即清除左右浮动的元素，让当前的元素左右两边都不存在浮动元素的时候才把元素放到标准流中显示 */
+		}
+
+
+	</style>
+</head>
+<body>
+<div class="header">
+	header
+</div>
+
+<div class="nav">
+		nav
+</div>
+<div class="main">
+		main
+</div>
+
+<div class="footer">
+	footer
+</div>
+	
+</body>
+</html>

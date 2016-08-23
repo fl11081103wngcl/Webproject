@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10_CSS浮动效果显示</title>
+	<style>
+
+	/* 浮动的本质：就是解决图片和文字并排的格式问题。
+ 
+	元素浮动后，会脱离标准流，但是还会影响标准流的布局。
+
+	没有设置浮动之前： 
+
+	总结一下：
+
+   浮动的元素会不占据标准流的空间。但是会影响标准流中的文本的排版。
+	*/
+
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+	.box1 {
+		border: 1px solid green;
+		height: 100px;
+		width: 100px;
+		background-color: silver;
+		/* float: left; */
+		/* float: right; */
+		float: none;
+
+	}
+	.box2 {
+		height: 300px;
+		width: 300px;
+		background-color: blue;
+		color:#fff;
+	}
+		
+	</style>
+</head>
+<body>
+<div class="box1">div1</div>
+<div class="box2">
+传智播客与移动开发
+传智播客与移动开发
+传智播客与移动开发
+传智播客与移动开发
+传智播客与移动开发
+传智播客与移动开发
+传智播客与移动开发
+传智播客与移动开发
+传智播客与移动开发
+
+
+</div>
+<div class="box3"></div>
+	
+</body>
+</html>

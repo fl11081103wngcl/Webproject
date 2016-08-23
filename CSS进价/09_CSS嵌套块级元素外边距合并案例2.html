@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>09_CSS嵌套块级元素外边距合并案例2</title>
+	<style>
+
+		margin-top: 20px;
+    /* 第二种外边距合并的情况：
+
+    当块级元素进行嵌套的时候，如果父盒子没有设置上边框和上内边距的话，子盒子的上外边距和 复盒子的上外边距会进行合并。 */
+
+	.box1 {
+		border: 1px solid red;
+		background-color: green;
+		height: 200px;
+		width: 200px;
+	}
+		
+	.box2 {
+		background-color: silver;
+		width: 200px;
+		height: 200px;
+
+	}
+	.box3-child {
+		background-color: black;
+		margin-top: 100px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100px;
+		height: 100px;
+		color: red;
+	}
+
+	</style>
+</head>
+<body>
+<div class="box1">1</div>
+<div class="box2">
+	<div class="box3-child">
+		child
+	</div>
+	father
+</div>
+
+	
+</body>
+</html>

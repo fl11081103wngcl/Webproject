@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11_CSS浮动效果2</title>
+	<style>
+
+	/* 	浮动的特性
+	1.浮动脱离标准流，不占位置，但会影响标准流。浮动只有左右浮动。
+	2. 浮动的元素A排列位置，跟上一个元素（块级）有关系。如果上一个元素有浮动，则A元素顶部会和上一个元素的顶部对齐；如果上一个元素是标准流，则A元素的顶部会和上一个元素的底部对齐。
+	3.一个父盒子里面的子盒子，如果其中一个子级有浮动的，则其他子级都需要浮动。这样才能一行对齐显示。
+	4.浮动根据元素书写的位置来显示相应的浮动。
+	5. 元素添加浮动后，如果没有设置宽高的话，元素会具有行内块元素的特性。元素的大小完全取决于定义的大小或者默认的内容多少。也就是具有了包裹性。 
+	*/
+	
+	* {
+		padding: 0;
+		margin: 0;
+	}
+	
+	.box1 {
+		width: 200px;
+		height: 200px;
+		background-color: silver;
+	}
+
+	.box2 {
+		width: 200px;
+		height: 200px;
+		background-color: green;
+		float: left;
+	}
+
+	.box3 {
+		width: 200px;
+		height: 200px;
+		background-color: red;
+		float: left;
+
+	}
+	.box4 {
+
+		background-color: teal;
+		float: left;
+
+	}
+
+
+	</style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4">
+	在举世瞩目的第31届奥林匹克运动会上，
+</div>
+	
+</body>
+</html>
