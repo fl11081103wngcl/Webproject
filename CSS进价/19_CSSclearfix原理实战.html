@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>19_clearfix原理实战</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.header, .asider, .main, .footer {
+			border: 1px solid red; /* bd+ tab */ 
+			background-color: silver;
+			margin-bottom: 10px;
+			height: 200px;
+		}
+
+		/* 
+			Cearfix的使用场景：
+			1、 父盒子要把所有的子盒子包裹住。
+			2、 父盒子是包裹正行的 div元素，需要前后进行清除浮动。
+
+		 */
+
+		.clearfix {
+			display: table; /* 触发bfc，div具有的包裹性 */
+		}
+
+		.clearfix:before, .clearfix:after {
+			content: "";
+			display: block;
+			clear: both;
+			height: 0;
+		}
+		
+		/* IE6 不能触发bfc，使用以下方法 */
+		.clearfix {
+			_zoom: 1； /* _代表IE6，*代表IE6和IE7都可以 */
+		}
+
+
+		.asider {
+			height: 300px;
+			float: left;
+			width: 200px;
+		}
+		.main {
+			float: left;
+			margin-left: 202px;
+			width: 980px;
+		}
+	</style>
+</head>
+<body>
+<div class="header">
+	header
+</div>
+<div class="wrap clearfix">
+	<div class="asider">asider</div>
+	<div class="main">main</div>
+</div>
+<div class="footer">footer</div>
+	
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>17_实现布局案例2</title>
+	<style>
+
+	/*1. asider 浮动后，main会自动上去，且宽度是自使用 */
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		.header, .asider, .main, .footer {
+			background-color: teal;
+			border: 1px solid yellowgreen;
+			margin-bottom: 10px;
+		}
+
+		.asider, .main {
+			height: 200px;
+			
+		}
+
+		.asider {
+			width: 200px;
+			float: left;
+		}
+
+		.main {
+			/* margin-left: 212px;  */
+			float: left;
+			width: 980px;
+		}
+
+		.header, .footer {
+			height: 100px;
+		}
+
+		.footer {
+			height: 50px;
+			clear: both;
+		}
+
+	</style>
+
+
+</head>
+<body>
+<div class="header">
+	header
+</div>
+<div class="asider">
+	asider
+</div>
+<div class="main">
+	main
+</div>
+<div class="footer">
+	footer
+</div>
+	
+</body>
+</html>
