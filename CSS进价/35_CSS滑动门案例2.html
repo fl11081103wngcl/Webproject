@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>35_CSS滑动门案例2</title>
+	<style>
+	* {padding: 0;margin: 0;}
+
+	.nav {
+		list-style: none;
+	} 
+
+	a, a:visited {
+		text-decoration: none;
+		color: teal;
+
+	}
+
+	.nav-iteam, .nav-link {
+		float: left;
+		line-height: 35px;
+	}
+
+	.border-r, .border-l {
+		float: left;
+		height: 35px;
+
+	}
+
+	.border-l {
+		background: url(l.png) no-repeat;
+		width: 6px;
+	}
+	.nav-link {
+		background: url(r.png) no-repeat  right;
+		padding-right: 30px;
+		margin-left: -2px;
+		margin-right: 10px;
+
+	}
+
+	</style>
+</head>
+<body>
+
+<ul class="nav">
+	<li class="nav-item"><i class="border-l"></i><a href="#" class="nav-link">博客</a><i class="border-r"></i></li>
+	<li class="nav-item"><i class="border-l"></i><a href="#" class="nav-link">传智博客</a><i class="border-r"></i></li>
+	<li class="nav-item"><i class="border-l"></i><a href="#" class="nav-link">传智博客</a><i class="border-r"></i></li>
+	<li class="nav-item"><i class="border-l"></i><a href="#" class="nav-link">传智博客</a><i class="border-r"></i></li>
+</ul>
+	
+</body>
+</html>
