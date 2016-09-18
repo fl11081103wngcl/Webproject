@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>27_CSS背景综合练习1</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		
+		.header {
+			
+			/* width: 1920px; */
+			width: 900px;
+			margin: 10px auto ;
+
+		}
+		ul {
+			list-style: none; /* 取消列表项前面默认的 "点" 显示 */
+
+
+
+		}
+		/* 设置a 标签以及 visited访问过的样式显示 color 字体显示，text-decoration */
+		a, a:visited {
+			color: #fff;
+			text-decoration: none; /* 取消下划线显示 */
+		}
+
+		.nav-item {
+			float: left;
+
+
+
+		}
+
+		.nav-link {
+			float: left;
+			background: url(../bg.png);
+			width: 120px;
+			height: 50px;
+			text-align: center;
+			line-height: 50px; /* 文本居中显示 */
+			margin-right: 5px;
+
+		}
+
+		/* 设置元素在其鼠标悬停时的样式。 
+			IE6只支持a元素的:hover，从IE7开始支持其它元素的:hover。 */
+
+		.nav-link:hover {
+			background: url(../bgc.png);
+
+		}
+	</style>
+</head>
+<body>
+<!-- ul.nav>(li.nav-item>a.nav-link[href="#"]{网页导航})*6 ul标签中包含li使用（），li中有a标签，使用[]设置属性，{}显示内容，整体*6表示有6个li，.nav 给元素一个class+tab 生成 -->
+
+<div class="header">
+<ul class="nav">
+	<li class="nav-item"><a href="#" class="nav-link">网页导航</a></li>
+	<li class="nav-item"><a href="#" class="nav-link">网页导航</a></li>
+	<li class="nav-item"><a href="#" class="nav-link">网页导航</a></li>
+	<li class="nav-item"><a href="#" class="nav-link">网页导航</a></li>
+	<li class="nav-item"><a href="#" class="nav-link">网页导航</a></li>
+	<li class="nav-item"><a href="#" class="nav-link">网页导航</a></li>
+</ul>
+	
+
+</div>
+
+	
+
+
+
+
+<!-- IE6只支持a标签的hover的css设置 -->
+	
+</body>
+</html>

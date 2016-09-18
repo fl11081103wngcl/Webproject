@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>26_CSS设置背景图片</title>
+	<style>
+		#header {
+			background-color: silver;
+			background-image: url(../1.jpg); /* 设置盒子的背景图片
+			/* 设置或检索对象的背景图像如何铺排填充。必须先指定background-image属性。 
+		允许提供2个参数，如果提供全部2个参数，第1个用于横向，第二个用于纵向。 
+如果只提供1个参数，则用于横向和纵向。特殊值repeat-x和repeat-y除外，因为repeat-x相当于repeat no-repeat，repeat-y相当于no-repeat repeat，即其实repeat-x和repeat-y等价于提供了2个参数值 
+ 
+ */
+			background-repeat: no-repeat;
+			height: 900px;
+			width: 900px;
+			border: 1px solid #000;
+			color: red;
+			/* text-align: center; */
+			vertical-align: middle;
+			/* line-height: 900px; 此方法的居中显示，仅限于一行文本的情况 */
+			display: table-cell;  /* 文本居中显示 */
+			
+
+
+
+
+		}
+		.wrap {
+			height: 300px;
+			width: 300px;
+			background-color: yellowgreen;
+			background-image: url(../b.png);
+			/* background-repeat: no-repeat; */
+			/* background-repeat: repeat-x; */
+			background-repeat: no-repeat; /* 平铺在div盒子中，即里面显示都是b.png图片 */
+
+			
+		}
+		body {
+			background-image: url(../1-首页.png);
+			background-attachment: fixed; /* 设置背景图是scroll（默认值），fixed固定，一般用于body的背景设置 */
+			background-repeat: round;
+
+			
+		}
+	</style>
+
+</head>
+<body>
+<div id="header">
+周强  信息化部 18979155226
+梅主任 18970108245
+广电旅梦酒店 地址：南昌市东湖区文教路77号  
+打车可以说到省图书馆，酒店就在边上
+广电地址：江西省南昌市青山湖区洪都中大道207号    出酒店往右直走10分钟左右，广电大楼就在十字路口
+南昌西站到酒店比较远：可以做高铁大巴到八一广场（5元），然后打车；或者直接打车广电保安电话：0791 82080640 
+
+</div>
+<div class="wrap"></div>
+	
+</body>
+</html>

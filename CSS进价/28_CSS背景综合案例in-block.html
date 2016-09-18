@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>28_CSS背景综合案例in-block</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		
+		a, a:visited {
+			color: #fff;
+			text-decoration: none;
+		}
+		ul {
+			width: 900px;
+			margin: 0 auto;
+			word-spacing: -8px;  /* 使用inline-block，导航栏之间会存在间隙，这个是因为，原来的块标签换行存在空格导致 */
+		}
+		
+		/* li 属于块级元素，要想是多个li元素共享一行，则需要设置其属性为行内块 
+			inline-block 实现菜单导航
+		*/
+		.nav-item {
+			display: inline-block; /* ie6 和ie7 不支持 inline-block属性 */
+			
+			*display: inline;  /* * 只有ie6和ie7识别 */
+			zoom: 1;
+			/* 以上2行代码，可以实现ie6中的inline-block 效果 */
+		}
+		
+		.nav-link {
+			background: url(../bg.png);
+			width: 120px;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			display: inline-block; /* a 标签属于行内标签，不能设置宽高，需要设置成行内块 */
+		}
+		
+		.nav-link:hover {
+			background: url(../bgc.png);
+		}
+
+	</style>
+</head>
+<body>
+<ul class="nav">
+	<li class="nav-item"><a href="#" class="nav-link">主页</a></li>
+	<li class="nav-item"><a href="#" class="nav-link">新闻动态</a></li>
+	<li class="nav-item"><a href="#" class="nav-link">产品设计</a></li>
+	<li class="nav-item"><a href="#" class="nav-link">方案解决</a></li>
+	<li class="nav-item"><a href="#" class="nav-link">技术支持</a></li>
+	<li class="nav-item"><a href="#" class="nav-link">关于我们</a></li>
+</ul>
+	
+</body>
+</html>
