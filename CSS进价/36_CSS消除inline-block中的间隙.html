@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS_消除行内快inline-block中的间隙</title>
+	<style>
+	* {padding: 0; margin: 0;}
+
+	div span {
+		display: inline-block;
+		width: 200px;
+		height: 200px;
+		background-color: yellowgreen;
+		border: 1px solid teal;
+		font-size: 14px;
+		text-align: center;
+		line-height: 200px;
+	}
+
+	/*消除行内块（inline-block）中间隙的*/
+
+	/*第一种方法 font-size=0方法*/
+	/*div {
+		font-size: 0;
+	}
+*/
+
+	/*第二种：使用html注释消除空格法*/
+
+	/*第三种：可以使用浮动float*/
+
+	/*第四种方法：可以使用字符间距letter-space 和 word-space 调整*/
+
+	</style>
+</head>
+<body>
+<div>
+	<span>1</span>
+	<span>2</span>
+	<span>3</span>
+	<span>4</span>
+</div>
+	
+</body>
+</html>

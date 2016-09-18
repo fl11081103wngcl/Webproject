@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>32_CSS挤开盒子</title>
+	<style>
+	* {
+		padding: 0;
+		margin: 0;
+	}
+	.wrap, .wrap1 {
+		height: 300px;
+		width: 300px;
+		background-color: teal;
+		padding: 100px 0 0 100px;
+		overflow: hidden;
+		border: 10px solid blue;
+	}
+
+	.child, .child1 {
+		height: 400px;
+		width: 100px;
+		background-color: red;
+	}
+
+	.wrap1 {
+		padding: 0;
+
+	}
+
+	.child1 {
+		margin-top: -300px;
+	}
+
+	</style>
+</head>
+<body>
+<div class="wrap">
+	<div class="child">
+		
+	</div>
+</div>
+
+<div class="wrap1">
+	<div class="child1">
+		
+	</div>
+</div>
+
+	
+</body>
+</html>

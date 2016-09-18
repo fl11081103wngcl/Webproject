@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>34_CSS滑动门</title>
+	<style>
+	* {
+		padding: 0;
+		margin: 0;
+	}
+
+	ul {
+		list-style: none;
+		margin-left: 20px;
+	}
+
+	a, a:visited {
+		color: teal;
+		text-decoration: none;
+
+	}
+	.nav-item, .nav-link {
+		float: left;
+	}
+
+	.nav-link {
+		background: url(c2.png) repeat-x;
+		/*background: url(img/../bg_r1_c3.png) repeat-x;*/
+		
+		height: 35px;
+		/*margin-right: 10px;*/
+		line-height: 35px;
+		margin-left: -1px;
+
+	}
+	.border-l {
+		background: url(c1.png) no-repeat;
+		float: left;
+		width: 7px;
+		height: 35px;
+	}
+
+	.border-r {
+		background: url(c3.png) no-repeat;
+		float: left;
+		width: 29px;
+		height: 35px;
+
+		margin-right: 10px;
+	}
+
+
+	</style>
+</head>
+<body>
+<ul class="nav">
+	<li class="nav-item"><i class="border-l"></i><a href="#" class="nav-link">首页</a><i class="border-r"></i></li>
+	<li class="nav-item"><i class="border-l"></i><a href="#" class="nav-link">传智博客</a><i class="border-r"></i></li>
+	<li class="nav-item"><i class="border-l"></i><a href="#" class="nav-link">前端与移动</a><i class="border-r"></i></li>
+	<li class="nav-item"><i class="border-l"></i><a href="#" class="nav-link">联系我们</a><i class="border-r"></i></li>
+</ul>
+	
+</body>
+</html>
