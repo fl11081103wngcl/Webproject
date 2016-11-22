@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D旋转移动</title>
+</head>
+<style>
+	body {
+		margin: 0;
+		padding: 0;
+		background-color: #F7F7F7;
+	}
+	
+	.rotate {
+
+		width: 960px;
+		margin: 0 auto;
+
+	}
+	.rotate .box {
+		height: 225px;
+		padding-top: 100px;
+		text-align: center;
+		perspective: 1000px;
+		float: left;
+		margin-left: 10px;
+}
+	
+	.rotate .box  img {
+		transition: all 3s;
+	}
+
+	.rotateX:hover img {
+		transform: rotateX(180deg);
+	}
+
+	.rotateY:hover img {
+		transform: rotateY(180deg);
+	}
+
+	.rotateZ:hover img {
+		transform: rotateZ(-180deg);
+	}
+
+	.TRSL {
+		width: 960px;
+		height: 400px;
+		padding-top: 400px;
+		perspective: 1000px;
+		float: left;
+	}
+
+	.TRSL .Mbox {
+		width: 200px;
+		height: 200px;
+		background-color: blue;
+		transition: all 1s;
+		float: left;
+		margin-left: 100px;
+	}
+
+	.MboxX:hover {
+		transform: translateX(300px);
+	}
+
+	.MboxY:hover {
+		transform: translateY(300px);
+	}
+
+	.MboxZ:hover {
+		transform: translateZ(-600px);
+	}
+
+	.cube {
+		width: 200px;
+		height: 200px;
+		text-align: center;
+		line-height: 200px;
+		font-size: 24px;
+		margin: 100px auto;
+		position: relative;
+		transform: rotateY(30deg) rotateX(-30deg);
+		transform-style: preserve-3d;
+		animation: rotate 10s ease infinite;
+
+
+	}
+
+	.front, .back, .top, .bottom, .left, .right {
+		width: 200px;
+		height: 200px;
+/* 		margin-top: 1200px;
+		margin-bottom: 200px; */
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	.front {
+		background-image:url("./images/118.jpg");
+		background-repeat: round;
+		transform: rotateY(0) translateZ(100px);
+	}
+
+	.back {
+		background-image:url("./images/119.jpg");
+		background-repeat: round;
+		transform: translateZ(-100px);
+	}
+
+	.top {
+		background-image: url('./images/120.jpg');
+		background-repeat: round;
+		transform: rotateX(90deg) translateZ(100px);
+	}
+	.bottom {
+		background-image:url("./images/121.jpg");
+		background-repeat: round;
+		transform: rotateX(90deg) translateZ(-100px);
+	}
+	.left {
+		background-image:url("./images/122.jpg");
+		background-repeat: round;
+		transform: rotateY(90deg) translateZ(-100px);
+	}
+	.right {
+		background-image:url("./images/123.jpg");
+		background-repeat: round;
+		transform: rotateY(90deg) translateZ(100px);
+	}
+	
+	@keyframes rotate {
+			from {
+				transform: rotateX(0deg) rotateY(360deg);
+			}
+
+			to {
+				transform: rotateX(360deg) rotateY(0);
+			}
+		}
+
+
+
+
+</style>
+<body>
+<section class="rotate">
+	<div class="rotateX box">
+		<img src="./images/x.jpg" alt="">
+		<p>X</p>
+	</div>
+	<div class="rotateY box">
+		<img src="./images/y.jpg" alt="">
+		<p>Y</p>
+	</div>
+	<div class="rotateZ box">
+		<img src="./images/z.jpg" alt="">
+		<p>Z</p>
+	</div>
+</section>
+
+<section class="TRSL">
+	<div class="Mbox MboxX"></div>
+	<div class="Mbox MboxY"></div>
+	<div class="Mbox MboxZ"></div>
+	
+</section>
+	
+
+<section class="cube">
+	<div class="front">front</div>
+	<div class="back">back</div>
+	<div class="top">top</div>
+	<div class="bottom">bottom</div>
+	<div class="left">left</div>
+	<div class="right">right</div>
+
+
+</section>
+
+
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>H5兼容浏览器</title>
+</head>
+
+<style>
+	
+	header {
+
+		display: block;  /* 因为js创建的标签是行内标签，所有需要使其显示为块元素，才能设置其宽高*/
+		width: 980px;
+		height: 100px;
+		margin: 0 auto;
+		background: red;
+	}
+</style>
+
+<script src="js/html5shiv.js">
+	/*
+	引用js库，文件，用于兼容低版本的浏览器，就不需要在一个一个使用js创建自定义标签了，这个已经创建OK了
+
+	但是还有一个问题就是，对于已经支持h5浏览器依然会在加载一边这个文件，造成资源的浪费，怎么办？
+
+	cc:ie6 +tab
+
+	<!--[if lte IE 8]>   ----> lte less than equal 小于 等于
+	
+	<![endif]-->
+
+	这个表面看是一个注释，但是这个只有ie认识，为什么要发明这个？这是因为ie有678几个版本， 不同的版本都会
+	做对应的优化修复，为了向下做兼容，而做的；
+
+	*/
+</script>
+
+<!--[if lte IE 8]>
+
+	<script>
+			alert(1);	
+	</script>
+
+	<script src="js/html5shiv.js">    /* 说明只有低于IE8 的浏览器会加载这个js文件*/
+	
+<![endif]-->
+
+
+<script>
+
+
+	// document.createElement("header"); //使用js创建一个自定义元素，使其兼容低版本浏览器，不识别H5语义化标签问题；
+</script>
+<body>
+
+<!-- IE8 是不支持H5的，如何识别H5中的语义化标签？ -->
+
+
+<header>
+	
+</header>
+
+
+&lt;less than
+&gt; great than
+
+
+
+	
+</body>
+</html>

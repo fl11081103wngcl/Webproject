@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2-3常用的语义化标签</title>
+</head>
+<style>
+	body {
+		padding: 0;
+		margin: 0;
+
+		color: black;
+
+		font-family: "宋体";
+	}
+
+	header {
+		width: 980px;
+		height: 100px;
+		margin: 0 auto;
+		border: 1px solid ;
+
+	}
+
+	nav {
+		background: yellow;
+		text-align: center;
+		line-height: 100px;
+	}
+	a {
+		text-decoration: none;
+		
+	}
+	
+	a:link {
+		color: #ff0000;
+	}
+
+	a:visited {
+		color: #0000ff;
+	}
+
+
+	a:hover {
+		background: #66ff66;
+	}
+
+	section {
+		height: 600px;
+		width: 980px;
+		margin: 0 auto;
+		border: 1px solid green;
+		background-color: pink;
+		margin-top: 10px;
+	}
+
+	article {
+		width: 800px;
+		height: 100%;
+		float: left;
+		background-color: blue;
+		text-align: center;
+		line-height: 600px;
+		color: green;
+
+	}
+
+	aside {
+		width: 180px;
+		height: 100%;
+		float: right;
+	}
+	footer {
+		text-align: center;
+	}
+
+</style>
+
+<body>
+
+	<header>
+		<nav>
+			<a href="#">首页简介</a>
+			<a href="#">新闻动态</a>
+			<a href="#">产品展示</a>
+			<a href="#">经典案例</a>
+			<a href="#">关于我们</a>
+		</nav>
+		
+
+	</header>
+	<section class="container">
+		<article> 
+			正文
+			<progress min="0" max="100" value="70"></progress>
+
+		</article>
+
+		<aside>
+			<a href="#">影片排行榜</a>
+			<a href="#">影片排行榜</a>
+			<a href="#">影片排行榜</a>
+			<a href="#">影片排行榜</a>
+			<a href="#">影片排行榜</a>
+		</aside>
+		
+	</section>
+	<footer>
+		<p>版权所有传智播客</p>
+	</footer>
+
+	
+	
+</body>
+</html>

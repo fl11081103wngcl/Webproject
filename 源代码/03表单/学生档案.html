@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>学生档案</title>
+</head>
+<style>
+	
+	body {
+		margin: 0;
+		padding: 0;
+		font-family: "微软雅黑";
+	}
+
+	form {
+		max-width: 640px;
+		width: 100%;
+		margin: 32px auto;
+
+	}
+
+	label {
+		width: 100%;
+		height: 30px;
+		display: block;
+		margin: 30px 20px 0 0;
+	}
+
+	input, meter {
+		display: block;
+		width: 65%;
+	}
+	span{
+		display: block;
+		margin: 30px 20px 0 0;
+	}
+
+	.save {
+		background-color: green;
+	}
+
+</style>
+<body>
+
+<form action="">
+	<fieldset>
+		<legend>学生档案</legend>
+		<label for="">姓名：<input type="text" placeholder="请输入姓名" required></label>
+		<label for="">手机号码：<input type="tel" placeholder="请输手机号码" required></label>
+		<label for="">邮箱：<input type="email" placeholder="请输入邮箱地址" required></label>
+		<label for="">所属学院：<input type="text" list="course"></label>
+		<datalist id="course">
+			<option value="Web">Web</option>
+			<option value="java">java</option>
+			<option value="IOS">IOS</option>
+			<option value="android">android</option>
+			<option value="python">python</option>
+			<option value="HTML">HTML</option>
+			<option value="CSS">CSS</option>
+		</datalist>
+		<label for="">入学成绩：<input type="number" required></label>
+		<label for="">基础水平：<meter min="0" max="100" low="60" high="80" value="90"></meter></label>
+		<label for="">入学日期：<input type="date"></label>
+		<label for="">毕业日期：<input type="date"></label>
+		<span>课程</span>
+		<progress min="0" max="100" value="30"></progress>
+		<label for="">
+			<input type="submit" value="保存" class="save" >
+		</label>
+
+
+	</fieldset>
+</form>
+	
+</body>
+</html>

@@ -445,9 +445,11 @@ a 标签不能继承其父元素的属性设置，需要单独对其设置
 }
 .link p {
 	margin-top: 30px;
+	margin-left: 10px;
 }
 .link a {
 	color: white;
+	margin-left: 10px;
 }
 
 .aboutme {

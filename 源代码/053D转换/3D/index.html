@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D</title>
+</head>
+
+<style>
+
+body {
+		margin: 0;
+		padding: 0;
+		background-color: #B3C04C;
+	}
+
+
+.cube {
+		width: 200px;
+		height: 200px;
+		text-align: center;
+		line-height: 200px;
+		font-size: 24px;
+		margin: 200px auto;
+		position: relative;
+		transform: rotateY(30deg) rotateX(-30deg);
+		transform-style: preserve-3d;
+		animation: rotate 10s ease infinite;
+}
+
+	.front, .back, .top, .bottom, .left, .right {
+		width: 200px;
+		height: 200px;
+/* 		margin-top: 1200px;
+		margin-bottom: 200px; */
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	.front {
+		background-image:url("./images/118.jpg");
+		background-repeat: round;
+		transform: rotateY(0) translateZ(100px);
+	}
+
+	.back {
+		background-image:url("./images/119.jpg");
+		background-repeat: round;
+		transform: translateZ(-100px);
+	}
+
+	.top {
+		background-image: url('./images/120.jpg');
+		background-repeat: round;
+		transform: rotateX(90deg) translateZ(100px);
+	}
+	.bottom {
+		background-image:url("./images/121.jpg");
+		background-repeat: round;
+		transform: rotateX(90deg) translateZ(-100px);
+	}
+	.left {
+		background-image:url("./images/122.jpg");
+		background-repeat: round;
+		transform: rotateY(90deg) translateZ(-100px);
+	}
+	.right {
+		background-image:url("./images/123.jpg");
+		background-repeat: round;
+		transform: rotateY(90deg) translateZ(100px);
+	}
+	
+	@keyframes rotate {
+			from {
+				transform: rotateX(0deg) rotateY(360deg);
+			}
+
+			to {
+				transform: rotateX(360deg) rotateY(0);
+			}
+		}
+
+
+</style>
+
+<body>
+
+<section class="cube">
+	<div class="front"></div>
+	<div class="back"></div>
+	<div class="top"></div>
+	<div class="bottom"></div>
+	<div class="left"></div>
+	<div class="right"></div>
+
+
+</section>
+
+
+<audio src="images/小酒窝.mp3" autoplay loop></audio>
+	
+</body>
+</html>
